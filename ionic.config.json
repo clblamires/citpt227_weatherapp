@@ -1,5 +1,7 @@
 {
   "name": "Ionic2Weather",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
