@@ -3,6 +3,7 @@ import { WeatherService } from './../weather.service';
 import { Component, OnInit } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { ActivatedRoute } from '@angular/router';
 
 
 
@@ -25,8 +26,16 @@ export class WeatherPage implements OnInit {
   constructor( 
     public weatherService: WeatherService, 
     public loadingCtrl: LoadingController,
-    private geolocation: Geolocation
+    private geolocation: Geolocation,
+    public route: ActivatedRoute
   ) {
+
+    // let loc = this.route.queryParams.subscribe( params => {
+    let loc = this.route.snapshot.paramMap.get("loc");
+      //console.log(params);
+    // })
+    console.log(loc);
+
     this.presentLoader();
     this.geolocation.getCurrentPosition().then( data => {
       this.currentLocation.lat = data.coords.latitude;

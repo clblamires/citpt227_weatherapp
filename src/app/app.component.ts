@@ -19,6 +19,10 @@ export class AppComponent {
       title: 'Current Weather',
       url: '/weather',
       icon: 'pin'
+    },
+    { 
+      title: 'Cape Canaveral', url: '/weather', icon: 'pin', 
+      loc: { lat: 28.3922, long: -80.6077 }
     }
   ];
 
