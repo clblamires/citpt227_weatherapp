@@ -3,5 +3,9 @@
   "integrations": {
     "cordova": {}
   },
-  "type": "angular"
+  "type": "angular",
+  "proxies": [{
+    "path": "/api/forecast",
+    "proxyUrl" : "https://api.darksky.net/forecast/278fa12363b54488a9f65f9f950267ac"
+  }]
 }

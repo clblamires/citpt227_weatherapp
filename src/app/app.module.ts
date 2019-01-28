@@ -9,12 +9,14 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-// adding the two new providers
+// adding the new providers
 import { WeatherService } from './weather.service';
 import { GeocodeService } from './geocode.service';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 // HttpModule import
 import { HttpModule } from '@angular/http';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,13 +25,14 @@ import { HttpModule } from '@angular/http';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    HttpModule
+    HttpModule,
   ],
   providers: [
     StatusBar,
     SplashScreen,
     WeatherService,
     GeocodeService,
+    Geolocation,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
