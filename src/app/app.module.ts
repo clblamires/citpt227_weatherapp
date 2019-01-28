@@ -9,17 +9,27 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+// adding the two new providers
+import { WeatherService } from './weather.service';
+import { GeocodeService } from './geocode.service';
+
+// HttpModule import
+import { HttpModule } from '@angular/http';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    WeatherService,
+    GeocodeService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
